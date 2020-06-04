@@ -1,0 +1,22 @@
+{
+  "name": "crimeapi",
+  "version": "1.0.0",
+  "description": "Javascript project for Code Louisville",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bserver.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrainMan471/CrimeAPI.git"
+  },
+  "author": "Mike Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrainMan471/CrimeAPI/issues"
+  },
+  "homepage": "https://github.com/TrainMan471/CrimeAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
