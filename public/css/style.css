@@ -2,12 +2,42 @@ html {
   font-size: 10px;
 }
 
+h1, {
+  text-align: center;
+  font-size: 10px;
+  padding-left: 2em;
 
+}
 
+p {
+ text-align: center;
+  font-size: 30px;
 
+  padding: 5em;
 
-h1 {
-  color : firebrick;
-  font-family: cursive;
-  font-size: 5rem;
+}
+
+div {
+  background: #F5FFFA;
+  padding: 2em;
+  float: left;
+}
+
+div.twenty-sixteen {
+  float: left;
+}
+
+body {
+  background: #fff;
+}
+
+ul {
+  border-radius: 5px;
+  background-color: aquamarine;
+  border-style: outset;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  font-weight: bold;
+
 }
