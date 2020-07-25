@@ -1,4 +1,3 @@
-
 var h2 = document.querySelector('h2');
 var p = document.querySelector('p');
 
@@ -51,8 +50,9 @@ setInterval(digitalClock, 500);
 
 
 //The following code makes an Ajax request to the url specified.
+function getApiData(state, year, crimeType) {
 var newRequest = new XMLHttpRequest();
-CDE_API = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/KY/violent-crime/2017/2018?API_KEY=uj7JC6XTYj9czDPySfqJrIiCc0y8uFgNHa6KkJQB';
+CDE_API = `https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${state}/${crimeType}/${year}/${year + 1}?API_KEY=uj7JC6XTYj9czDPySfqJrIiCc0y8uFgNHa6KkJQB`;
 newRequest.open('GET', CDE_API);
 
 
@@ -68,8 +68,8 @@ newRequest.onreadystatechange = function() {
         for (let i = 0; i <crimeStats.results.length; i++ ) {
 
 
-          if (crimeStats.results[i].data_year === 2017) {
-          const h1 = document.querySelector('h1').innerHTML = `Number of Violent Crimes According to Each Originating Agency during the year : ${crimeStats.results[i].data_year}`;
+          if (crimeStats.results[i].data_year === year) {
+          const h1 = document.querySelector('h1').innerHTML = `Number of Violent Crimes According to Each Originating Agency during the year : ${year}`;
           const div = document.querySelector('div');
           const ul = document.createElement('ul');
 
@@ -93,5 +93,29 @@ newRequest.onreadystatechange = function() {
         console.log("request not received yet");
       }
 
-}
-newRequest.send();
+     }
+     newRequest.send();
+  }
+
+
+
+ function askUser(){
+   let state = prompt("What state would you like to view?");
+   let stringYear = prompt("What year would you like to view?");
+    let actualYear = parseInt(stringYear, 10);
+
+   let crimeType = prompt("What type of crime would you like to view? ");
+
+   getApiData(state,actualYear,crimeType);
+
+ }
+
+ askUser();
+
+
+
+
+
+
+
+///getApiData(2017,'violent-crime');

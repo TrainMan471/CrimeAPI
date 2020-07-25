@@ -31,7 +31,7 @@ body {
   background: #fff;
 }
 
-ul {
+ul,  button {
   border-radius: 5px;
   background-color: aquamarine;
   border-style: outset;
@@ -39,5 +39,17 @@ ul {
   font-family: sans-serif;
   color: black;
   font-weight: bold;
+  padding: 10px;
 
+}
+
+li {
+  border-radius: 5px;
+  background-color: firebrick;
+  border-style: outset;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
 }
