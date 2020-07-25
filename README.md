@@ -11,4 +11,5 @@ To be able to run my project on your machine, you will need to:
 For this project, my goal is/was to make a very simple website that makes an API to the FBI's offical crime database and then display that data in an HTML file users can access.
 So the requirements I chose were 
 1)Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
+2)Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)
 
