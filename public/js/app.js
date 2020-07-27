@@ -124,7 +124,7 @@ newRequest.onreadystatechange = function() {
 
 
 
-   console.log(state, year, crimeType);
+   
 
 
 
