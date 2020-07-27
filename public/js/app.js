@@ -71,17 +71,16 @@ newRequest.onreadystatechange = function() {
           if (crimeStats.results[i].data_year === year) {
           const h1 = document.querySelector('h1').innerHTML = `Number of Violent Crimes According to Each Originating Agency during the year : ${year}`;
           const div = document.querySelector('div');
-          const ul = document.createElement('ul');
+          const ul  = document.createElement('ul');
 
 
+      ul.innerHTML =  ` <li>Originating Agency: ${crimeStats.results[i].ori}</li>
+                        <li>Type of Offense: ${crimeStats.results[i].offense}</li>
+                        <li>Actual Violent Crimes Committed : ${crimeStats.results[i].actual}</li>
+                        <li>Violent Crimes that were cleared : ${crimeStats.results[i].cleared}</li>`;
+      div.append(ul);
 
-          ul.innerHTML =   `<li>Originating Agency: ${crimeStats.results[i].ori}</li>
-                          <li>Type of Offense: ${crimeStats.results[i].offense}</li>
-                          <li>Actual Violent Crimes Committed : ${crimeStats.results[i].actual}</li>
-                          <li>Violent Crimes that were cleared : ${crimeStats.results[i].cleared}</li>`;
 
-
-          div.append(ul);
 
           }
 
@@ -100,17 +99,38 @@ newRequest.onreadystatechange = function() {
 
 
  function askUser(){
-   let state = prompt("What state would you like to view?");
-   let stringYear = prompt("What year would you like to view?");
-    let actualYear = parseInt(stringYear, 10);
+   let state = document.getElementById('state').value;
+   let year = document.getElementById('year').value;
+   let actualYear = parseInt(year, 10);
+   let crimeType = document.getElementById('crime').value;
+   console.log(state, actualYear, crimeType);
 
-   let crimeType = prompt("What type of crime would you like to view? ");
+
 
    getApiData(state,actualYear,crimeType);
 
  }
 
- askUser();
+ function resetValues() {
+   let state = document.getElementById('state').value = "";
+   let year = document.getElementById('year').value = "";
+   let crimeType = document.getElementById('crime').value = "";
+
+   let div = document.querySelector('div');
+   let ul = document.querySelector('ul');
+   div.remove(ul);
+
+
+
+
+
+   console.log(state, year, crimeType);
+
+
+
+ }
+
+
 
 
 

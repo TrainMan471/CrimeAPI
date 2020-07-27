@@ -2,11 +2,15 @@ html {
   font-size: 10px;
 }
 
-h1, {
+h1, h2,  {
   text-align: center;
   font-size: 10px;
-  padding-left: 2em;
+  padding-left: 10px;
 
+}
+
+input,button {
+  text-align: center;
 }
 
 p {
@@ -31,7 +35,7 @@ body {
   background: #fff;
 }
 
-ul,  button {
+ul,  {
   border-radius: 5px;
   background-color: aquamarine;
   border-style: outset;

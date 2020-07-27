@@ -12,15 +12,19 @@
 
   <body>
     <h1></h1>
-    <h2><label for="state">State:</label>
-  <input type="text" id="state" name="state"><br><br>
-  <label for="year">year:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <label for="crime"> year:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit"></h2>
+    <h2>Use the form below to choose the state, year, and type of crime you wish to view</h2>
+      <input id="state" placeholder="Please enter a state"></input>
+      <input id="year" placeholder="please enter a year"></input>
+      <input id="crime" placeholder="please enter type of crime"></input>
+      <button onclick="askUser()">Submit</button>
+      <button onclick="resetValues()">Reset Values</button>
+
       <p class="random"><span></span></p>
-        <div></div>
+
+        <div class="wrapper">
+        <div>
+        </div>
+      </div>
 
 
 
