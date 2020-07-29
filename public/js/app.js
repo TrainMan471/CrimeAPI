@@ -2,38 +2,41 @@ var h2 = document.querySelector('h2');
 var p = document.querySelector('p');
 
 
-//The code below creates a live clock that changes color every second.
+//The code below creates a live clock that changes color every second and countdowns until next year..where more crimes will be recorded!
 function digitalClock() {
-  let today = new Date();
-  let hours = today.getHours();
-  let minutes = today.getMinutes();
-  let seconds = today.getSeconds();
-  let year = today.getFullYear();
-  let month = today.getMonth();
-  let thisDay = today.getDay();
+
+  var newYearTimer = new Date("Jan 1, 2021 00:00:00").getTime();
 
 
-  if (hours > 12 ) {
-    hours = hours - 12;
-  }
+  var countdown = setInterval(function() {
 
-  if (hours == 0) {
-    hours = 12;
-  }
 
-  if (hours < 10) {
-    hours = '0' + hours;
-  }
+    var currentDate = new Date().getTime();
 
-  if (minutes < 10 ) {
-    minutes = '0' + minutes;
-  }
 
-  if (seconds < 10 ) {
-    seconds = '0' + seconds;
-  }
+    var distance = newYearTimer - currentDate;
 
-  p.innerHTML = `${hours} : ${minutes} ${seconds}`;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+    document.getElementById("demo").innerHTML = `${days} days ${hours} hours
+     ${minutes} minutes ${seconds} seconds until the new crime stats!`;
+
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+
+
+
+
+
 }
 
 function getRandomColor() {
@@ -45,11 +48,15 @@ function setRandomColor() {
   p.style.color = getRandomColor();
 }
 
+function timeForNewStats() {
+
+}
+
 setInterval(setRandomColor,1000);
 setInterval(digitalClock, 500);
 
 
-//The following code makes an Ajax request to the url specified.
+//The following code makes an Ajax request to the url specified, and then irritates over the data and displays in index.html
 function getApiData(state, year, crimeType) {
 var newRequest = new XMLHttpRequest();
 CDE_API = `https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${state}/${crimeType}/${year}/${year + 1}?API_KEY=uj7JC6XTYj9czDPySfqJrIiCc0y8uFgNHa6KkJQB`;
@@ -97,7 +104,7 @@ newRequest.onreadystatechange = function() {
   }
 
 
-
+//This function creates an button onclick event that lets the user choose the state, year, and type of crime they wish to view
  function askUser(){
    let state = document.getElementById('state').value;
    let year = document.getElementById('year').value;
@@ -111,6 +118,7 @@ newRequest.onreadystatechange = function() {
 
  }
 
+//And this function lets the user reset the values
  function resetValues() {
    let state = document.getElementById('state').value = "";
    let year = document.getElementById('year').value = "";
