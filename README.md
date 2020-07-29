@@ -19,3 +19,13 @@ So the requirements I chose were
 3)Create a form and save the response (on click of Submit button) to an external file or API
 
 
+
+Some issues I noticed/would like to fix in the future:
+1)The structure/display of the HTML is far from the most attractive.
+2)Very rarely has the api called failed, but it has with such states like California.
+
+Note: Some of FBI crime data and terms were somewhat hard to understand, especially "ORI". An "ORI", according to Crime Data Explorer's glossary of terms, is"
+A unique nine-character National Crime Information Center (NCIC) ORI that has been assigned to each LEA. The NCIC assigns all ORI numbers to any agency that is going to be participating in Uniform Crime Reporting.
+
+
+
