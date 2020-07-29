@@ -69,15 +69,15 @@ newRequest.onreadystatechange = function() {
 
 
           if (crimeStats.results[i].data_year === year) {
-          const h1 = document.querySelector('h1').innerHTML = `Number of Violent Crimes According to Each Originating Agency during the year : ${year}`;
+          const h3 = document.querySelector('h3').innerHTML = `Number of Violent Crimes According to Each Originating Agency during the year : ${year}`;
           const div = document.querySelector('div');
           const ul  = document.createElement('ul');
 
 
       ul.innerHTML =  ` <li>Originating Agency: ${crimeStats.results[i].ori}</li>
                         <li>Type of Offense: ${crimeStats.results[i].offense}</li>
-                        <li>Actual Violent Crimes Committed : ${crimeStats.results[i].actual}</li>
-                        <li>Violent Crimes that were cleared : ${crimeStats.results[i].cleared}</li>`;
+                        <li>Actual ${crimeStats.results[i].offense}s committed : ${crimeStats.results[i].actual}</li>
+                        <li>${crimeStats.results[i].offense}s that were cleared : ${crimeStats.results[i].cleared}</li>`;
       div.append(ul);
 
 
@@ -117,14 +117,13 @@ newRequest.onreadystatechange = function() {
    let crimeType = document.getElementById('crime').value = "";
 
    let div = document.querySelector('div');
-   let ul = document.querySelector('ul');
-   div.remove(ul);
+   div.innerHTML = "";
 
 
 
 
 
-   
+
 
 
 
