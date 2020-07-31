@@ -15,7 +15,9 @@ To be able to run my project on your machine, you will need to:
 5)Type localhost:2000 into your web browser and the site should load.
 
 
-My goal for this project was to make a simple website that calls a third party API and displays data from that api on a webpage. The requirements I chose for this project are as follows:
+My goal for this project was to make a simple website that calls a third party API and displays data from that api on a webpage.It is a Crime API simple webpage that lets you choose the state, the year, and the type of crime you wish to view. When the API is called, the page will be filled with unordered list elements that list the type of offense and the number of offenses per ORI. (According to the FBI's Crime Data Explorer's Glossary of Terms, an ORI is A unique nine-character National Crime Information Center (NCIC) ORI that has been assigned to each LEA. The NCIC assigns all ORI numbers to any agency that is going to be participating in Uniform Crime Reporting.)
+
+The requirements I chose for this project are as follows:
 
 1)Retrieve data from an external API and display data in your app (such as with fetch() or with AJAX)
 
@@ -32,6 +34,11 @@ b)Fetches Crime data from 3rd party API
 
 c)Creates dynamic countdown timer to the next year
 
+
+
+NOTES/POSSIBLE BUGS/FUTURE UPDATES:
+In the future I plan to make this much more attractive looking. The HTML and CSS structure and styling are not the greatest, since I focused mainly on Javascript this course. I
+also would like to add a feature that displays a state's number of crimes all at once. (For example, KY has X amount of homicides during the year 2015 etc)
 
 
 
