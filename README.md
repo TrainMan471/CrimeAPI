@@ -42,6 +42,8 @@ NOTES/POSSIBLE BUGS/FUTURE UPDATES:
 In the future I plan to make this much more attractive looking. The HTML and CSS structure and styling are not the greatest, since I focused mainly on Javascript this course. I
 also would like to add a feature that displays a state's number of crimes all at once. (For example, KY has X amount of homicides during the year 2015 etc)
 
+When the API is called, the data is displayed lower in the page than I want it to so you will have to scroll down a bit. I created a button at the top that will let you just jump right to it instead of scrolling, until I figure out how to display the data more appropriately.
+
 
 
 
